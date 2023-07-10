@@ -3,7 +3,7 @@ from __future__ import annotations as _annotations
 
 import typing
 import warnings
-from abc import ABCMeta
+from abc import ABC
 from functools import partial
 from types import FunctionType
 from typing import Any, Callable, Generic, Mapping
@@ -61,7 +61,7 @@ class _ModelNamespaceDict(dict):  # type: ignore[type-arg]
 
 
 @dataclass_transform(kw_only_default=True, field_specifiers=(Field,))
-class ModelMetaclass(metaclass=ABCMeta):
+class ModelMetaclass(ABC):
     def __new__(
         mcs,
         cls_name: str,
